@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report name" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.3310000000000022"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="id_materia" class="java.lang.String">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[SELECT ret_NomCompleto AS Materia, AVG(res1) AS Dominio, AVG(res2) AS Planificación, AVG(res3) AS Ambiente, AVG(res4) AS Estrategias, AVG(res5) AS Motivación, AVG(res6) AS Evaluación, AVG(res7) AS Comunicación, AVG(res8) AS Gestión, AVG(res9) AS Tecnología, AVG(res10) AS General from encuesta where gse_Nombre = $P{id_materia};]]>
+	</queryString>
+	<field name="Materia" class="java.lang.String"/>
+	<field name="Dominio" class="java.math.BigDecimal"/>
+	<field name="Planificación" class="java.math.BigDecimal"/>
+	<field name="Ambiente" class="java.math.BigDecimal"/>
+	<field name="Estrategias" class="java.math.BigDecimal"/>
+	<field name="Motivación" class="java.math.BigDecimal"/>
+	<field name="Evaluación" class="java.math.BigDecimal"/>
+	<field name="Comunicación" class="java.math.BigDecimal"/>
+	<field name="Gestión" class="java.math.BigDecimal"/>
+	<field name="Tecnología" class="java.math.BigDecimal"/>
+	<field name="General" class="java.math.BigDecimal"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="96" y="0" width="361" height="79"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sistema de Retroalimentación de Desempeño Docente]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="17" y="41" width="38" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Dominio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="55" y="41" width="60" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Planificación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="115" y="41" width="47" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Ambiente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="162" y="41" width="53" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estrategias]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="215" y="41" width="49" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Motivación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="491" y="41" width="38" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[General]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="264" y="41" width="55" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Evaluación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="319" y="41" width="69" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Comunicación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="41" width="45" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Gestión]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="435" y="41" width="56" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Tecnología]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="196">
+			<textField>
+				<reportElement x="17" y="3" width="38" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Dominio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="55" y="3" width="58" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Planificación}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="115" y="3" width="47" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Ambiente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="162" y="3" width="53" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Estrategias}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="215" y="3" width="49" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Motivación}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="491" y="3" width="38" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{General}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="264" y="3" width="55" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Evaluación}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="319" y="3" width="69" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Comunicación}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="3" width="43" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Gestión}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="435" y="3" width="56" height="20"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression class="java.math.BigDecimal"><![CDATA[$F{Tecnología}]]></textFieldExpression>
+			</textField>
+			<barChart>
+				<chart>
+					<reportElement x="0" y="63" width="555" height="133"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{Materia}]]></seriesExpression>
+						<categoryExpression><![CDATA["Dominio"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Dominio}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{Materia}]]></seriesExpression>
+						<categoryExpression><![CDATA["Planificación"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Planificación}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{Materia}]]></seriesExpression>
+						<categoryExpression><![CDATA["Ambiente"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Ambiente}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{Materia}]]></seriesExpression>
+						<categoryExpression><![CDATA["Estrategias"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Estrategias}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{Materia}]]></seriesExpression>
+						<categoryExpression><![CDATA["Motivación"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Motivación}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{Materia}]]></seriesExpression>
+						<categoryExpression><![CDATA["Evaluación"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Evaluación}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{Materia}]]></seriesExpression>
+						<categoryExpression><![CDATA["Comunicación"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Comunicación}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{Materia}]]></seriesExpression>
+						<categoryExpression><![CDATA["Gestión"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Gestión}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{Materia}]]></seriesExpression>
+						<categoryExpression><![CDATA["Tecnología"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Tecnología}]]></valueExpression>
+					</categorySeries>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{Materia}]]></seriesExpression>
+						<categoryExpression><![CDATA["General"]]></categoryExpression>
+						<valueExpression><![CDATA[$F{General}]]></valueExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot/>
+					<itemLabel color="#000000" backgroundColor="#FFFFFF"/>
+					<categoryAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat>
+							<labelFont/>
+							<tickLabelFont/>
+						</axisFormat>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="26" width="205" height="28"/>
+				<textElement/>
+				<text><![CDATA[Blvd. Tecnológico, Col. Guaymitas
+San José del Cabo, Baja California Sur]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
